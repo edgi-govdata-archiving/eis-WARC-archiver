@@ -5,7 +5,7 @@ The `wget` bash function has a option flag to package the response from the supp
 
 The python script `createWarc.py` invokes a wget command as a subprocess in the script to package the response from the supplied URL into a warc format. The pdf links present in the html page cannot be preserved in the html therefore, they are being downloaded separately in a different wget call.
 
-The EIS csv is supplied from this ![parser](https://github.com/titaniumbones/eot-sprint-toolkit/tree/master/eis)
+The EIS csv is supplied from this [parser](https://github.com/titaniumbones/eot-sprint-toolkit/tree/master/eis)
 This script continues on the work done for the URL scraping list supplied by one of the groups from the Guerrilla Archiving Event taken place at University of Toronto on December 16, 2016.
 
 ## Dependecies
@@ -18,4 +18,4 @@ This script has only been tested on OSX and Linux environment. If you would like
 Clone this repo then just simply run the python script `python createWarc.py`
 Supplied is the csv, if you would like to customize this python or expand and modify the script to a take in generic datasets please modify the csv, base urls accordingly.
 
-This script is specifically written for the Enivornment Impact Statement documents from the EPA ![site](https://cdxnodengn.epa.gov/cdx-enepa-public/action/eis/search)
+This script is specifically written for the Enivornment Impact Statement documents from the EPA [site](https://cdxnodengn.epa.gov/cdx-enepa-public/action/eis/search)
