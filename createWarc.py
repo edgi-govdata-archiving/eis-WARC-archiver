@@ -16,7 +16,7 @@ base_Documents_EPA_url = 'https://cdxnodengn.epa.gov/cdx-enepa-II/public/action/
 #base URL each EIS Letter comments
 base_Letters_EPA_url = 'https://cdxnodengn.epa.gov/cdx-enepa-II/public/action/eis/details/downloadCommentLetters?eisId='
 
-
+#loop through each row in the csv file and append the EIS unique id to each base URL to perform the wget calls
 with open(csv_Path) as csvfile:
     reader = csv.DictReader(csvfile)
     for row in reader:
@@ -28,6 +28,8 @@ with open(csv_Path) as csvfile:
             os.makedirs(warcHTMLOutputPath)
             os.makedirs(DocumentsOutputPath)
             os.makedirs(LettersOutputPath)
+            #wget has a option flag to pacakge the response in WARC format, unfortunately when supplying multiple urls to one singl WARC, the documents are corrupted
+            #therefore they are grabbed in 3 different wget calls
             html = subprocess.call(["wget", "--warc-file", warcHTMLOutputPath + row['eis_id'], epaurl + row['eis_id'], "--delete-after"])
             letterDocs = subprocess.call(["wget", base_Letters_EPA_url + row['eis_id'], "-O" + LettersOutputPath + row['eis_id'] + ".zip"])
             eisDocs = subprocess.call(["wget", base_Documents_EPA_url + row['eis_id'],"-O"+DocumentsOutputPath + row['eis_id'] + ".zip"])
