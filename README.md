@@ -12,7 +12,7 @@ This repo will describe the tools used to successfully Archive a given set of we
 Have the following dependecies installed in your machine before getting started with the harvesting proccess.
 
 ## List of URLs
-Have a list of URLs in a text file, separate with newline characters.
+Have a list of URLs in a text file, separate with newline characters [example](https://raw.githubusercontent.com/edgi-govdata-archiving/eis-WARC-archiver/master/EIS_URLs.txt).
 
 ## Docker
 Install the Docker Engine on your machine, its available for Mac/Win/Linux, see [instructions](https://docs.docker.com/engine/installation/) for installation specific to your environment. Although this process has been only tested on Mac/Linux, it requires a bash shell. This process hasn't been tested for a Windows environment with a bash shell.
@@ -23,7 +23,7 @@ Install `pip` if its not installed already [here](https://pip.pypa.io/en/stable/
 # Installation
 
 ## warcat
-Install warcat using pip or source [here]().
+Install warcat using pip or [source](https://github.com/chfoo/warcat).
 
 ## pywb
 This tool can playback WARC files on your localhost, this can be used to verify the generated WARCs, full installation instructions [here](https://github.com/ikreymer/pywb)
@@ -38,11 +38,11 @@ Get the pre-built docker container:
 `docker pull slang800/grab-site`
 
 ### Running
-To run the grab-site server, the following command in the terminal:
+To run the grab-site server, enter the following command in the terminal:
 Can set the port to whatever you want after `-p` flag.
 Set Volume path for data output (ie WARCs) after `-v` flag up to `:/data`
 
-`docker run --detach -p [port]:[port] -v [path-to-folder-to-store-data]/grab-site-date:/data --name warcfactory slang800/grab-site`
+`docker run --detach -p [port]:[port] -v [path-to-folder-to-store-data]/grab-site-data:/data --name warcfactory slang800/grab-site`
 
 Verify the container running using:
 
@@ -56,10 +56,11 @@ For a single URL crawl use the following command:
 
 `docker exec warcfactory grab-site --no-offsite-links http://example.com`
 
-Supplied in this repo is a shell script `pars-urls.sh` that just reads in a text file of URLs and runs the above command for each and every URLs.
+Supplied in this repo is a shell script `pars-urls.sh` that just reads in a text file of URLs and runs the above command for each and every URLs. **Supply your own text file with the URLs and modify the shell script accordingly**
 To run the shell script in background and with no outputs run it as:
 
 `nohup sh parse-urls.sh &`
+
 
 The crawling will be done automatically for each URLs supplied in the text file.
 If your machine is setup or exposed to be a public ip, you can monitor it at `localhost:[port]`, the port being the port the grab-site is running on. The dashboard will show current progress and status of the crawl.
