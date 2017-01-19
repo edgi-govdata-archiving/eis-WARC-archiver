@@ -18,7 +18,7 @@ Have a list of URLs in a text file, separate with newline characters [example](h
 Install the Docker Engine on your machine, its available for Mac/Win/Linux, see [instructions](https://docs.docker.com/engine/installation/) for installation specific to your environment. Although this process has been only tested on Mac/Linux, it requires a bash shell. This process hasn't been tested for a Windows environment with a bash shell.
 
 ## pip
-Install `pip` if its not installed already [here](https://pip.pypa.io/en/stable/installing/).
+Install `pip` if its not installed already instructions are [here](https://pip.pypa.io/en/stable/installing/).
 
 # Installation
 
