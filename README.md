@@ -35,18 +35,24 @@ Once the dependecies, specifically the docker environment is installed
 Full install/reference [instructions](https://github.com/edgi-govdata-archiving/grab-site).
 
 Get the pre-built docker container:
-`docker pull slang800/grab-site`
+```bash
+docker pull slang800/grab-site
+```
 
 ### Running
 To run the grab-site server, the following command in the terminal:
 Can set the port to whatever you want after `-p` flag.
 Set Volume path for data output (ie WARCs) after `-v` flag up to `:/data`
 
-`docker run --detach -p [port]:[port] -v [path-to-folder-to-store-data]/grab-site-date:/data --name warcfactory slang800/grab-site`
+```bash
+docker run --detach -p [port]:[port] -v [path-to-folder-to-store-data]/grab-site-date:/data --name warcfactory slang800/grab-site
+```
 
 Verify the container running using:
 
-`docker ps`
+```bash
+docker ps
+```
 
 The container `warcfactory` should appear on the output.
 
@@ -54,12 +60,16 @@ The container `warcfactory` should appear on the output.
 
 For a single URL crawl use the following command:
 
-`docker exec warcfactory grab-site --no-offsite-links http://example.com`
+```bash
+docker exec warcfactory grab-site --no-offsite-links http://example.com
+```
 
-Supplied in this repo is a shell script `pars-urls.sh` that just reads in a text file of URLs and runs the above command for each and every URLs.
+Supplied in this repo is a shell script `pars-urls.sh` that just reads in a text file of URLs and runs the above command for each and every URLs. Supply the text file after the shell script.
 To run the shell script in background and with no outputs run it as:
 
-`nohup sh parse-urls.sh &`
+```bash
+nohup sh parse-urls.sh [path_to_text_file_of_URLS] &
+```
 
 The crawling will be done automatically for each URLs supplied in the text file.
 If your machine is setup or exposed to be a public ip, you can monitor it at `localhost:[port]`, the port being the port the grab-site is running on. The dashboard will show current progress and status of the crawl.
