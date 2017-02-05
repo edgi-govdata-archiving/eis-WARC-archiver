@@ -83,7 +83,9 @@ pywb
 
 This tool can playback WARC files on your localhost, this can be used to verify the generated WARCs, full installation instructions [here](https://github.com/ikreymer/pywb)
 
-# Deprecated
+# Depreciated
+[![status](https://img.shields.io/badge/status-depreciated-red.svg)]()
+
 Following scripts are legacy scripts that are not being used in the current process of Archiving and generating warcs, but they still work. Currently the `grab-site` method was chose because of the valid WARCs it has been generating.
 
 The `createWarc.py` python script that will parse through a giving csv with EIS ID's and use the wget function grab and package the EIS URL in a WARC format and download any documents associated with the EIS into a zip format.
