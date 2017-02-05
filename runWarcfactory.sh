@@ -1,4 +1,6 @@
-file="EIS_URLs-Dec18.txt"
+#!/bin/bash
+
+file=$1
 lines=`cat $file`
 for line in $lines; do
 	echo "$line"
