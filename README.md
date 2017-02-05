@@ -79,8 +79,7 @@ Install warcat using pip or source [here](https://github.com/chfoo/warcat).
 
 pywb
 ---
-[![Travis](https://img.shields.io/travis/rust-lang/rust.svg)](https://travis-ci.org/ikreymer/pywb) [![Coveralls](https://img.shields.io/coveralls/jekyll/jekyll.svg)](https://coveralls.io/github/ikreymer/pywb)
-
+[![Travis](https://img.shields.io/travis/rust-lang/rust.svg)](https://travis-ci.org/ikreymer/pywb) [![Coverage Status](https://coveralls.io/repos/github/ikreymer/pywb/badge.svg?branch=master)](https://coveralls.io/github/ikreymer/pywb?branch=master)
 This tool can playback WARC files on your localhost, this can be used to verify the generated WARCs, full installation instructions [here](https://github.com/ikreymer/pywb)
 
 # Deprecated
