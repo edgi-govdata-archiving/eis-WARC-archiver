@@ -15,7 +15,7 @@ Have a list of URLs in a text file, separated with newline characters.
 
 Docker
 ---
-Install the Docker Engine on your machine, its available for Mac/Win/Linux, see [instructions](https://docs.docker.com/engine/installation/) for installation specific to your environment. Although this process has been only tested on Mac/Linux, it requires a bash shell. This process hasn't been tested for a Windows environment with a bash shell.
+Install the Docker Engine on your machine, its available for Mac/Win/Linux, see [instructions](https://docs.docker.com/engine/installation/) for installation specific to your environment. Although this process has been only tested on Mac/Linux, it requires a bash shell. This process hasn't been tested for a Windows environment with or without bash shell.
 
 # Usage
 Once the dependecies, specifically the docker environment is installed 
