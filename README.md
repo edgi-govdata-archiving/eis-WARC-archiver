@@ -24,7 +24,7 @@ grab-site
 ---
 [![Travis](https://img.shields.io/travis/rust-lang/rust.svg)](https://hub.docker.com/r/slang800/grab-site/) [![Docker](https://img.shields.io/badge/docker--repo-pull-blue.svg)](https://hub.docker.com/r/slang800/grab-site/)
 
-Full install/reference [instructions](https://github.com/edgi-govdata-archiving/grab-site).
+Full install/reference [instructions](https://github.com/slang800/grab-site).
 
 Get the pre-built docker container:
 ```bash
