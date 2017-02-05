@@ -18,11 +18,11 @@ Docker
 Install the Docker Engine on your machine, its available for Mac/Win/Linux, see [instructions](https://docs.docker.com/engine/installation/) for installation specific to your environment. Although this process has been only tested on Mac/Linux, it requires a bash shell. This process hasn't been tested for a Windows environment with or without bash shell.
 
 # Usage
-Once the dependecies, specifically the docker environment is installed 
+Once the dependecies are installed, specifically the docker environment then you are ready to use grab-site 
 
 grab-site
 ---
-[![Travis](https://img.shields.io/travis/rust-lang/rust.svg)](https://hub.docker.com/r/slang800/grab-site/)
+[![Travis](https://img.shields.io/travis/rust-lang/rust.svg)](https://hub.docker.com/r/slang800/grab-site/) [![Docker](https://img.shields.io/badge/docker--repo-pull-blue.svg)](https://hub.docker.com/r/slang800/grab-site/)
 
 Full install/reference [instructions](https://github.com/edgi-govdata-archiving/grab-site).
 
