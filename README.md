@@ -2,7 +2,7 @@
 This repo will describe the tools used to successfully Archive a given set of webpages. This is was developed for EPA's EIS documents serving catalouge, but it is generalized enough to be used for any webpage. The process involves 3 major steps:
 
 1.	Generating a list of URLs to be archived.
-2.	Running the [grab-site](https://github.com/edgi-govdata-archiving/grab-site) for the list of URLs as a warcfactory process that is constantly generating WARC format files for the supplied URLs.
+2.	Running the [grab-site](https://github.com/slang800/grab-site) for the list of URLs as a warcfactory process that is constantly generating WARC format files for the supplied URLs.
 3.	Verifying the quality of the generated WARCs using [warcat](https://github.com/chfoo/warcat)
 4.	Optional wayback machine [pywb](https://github.com/ikreymer/pywb) that be used to playback the generated WARCs.
 
