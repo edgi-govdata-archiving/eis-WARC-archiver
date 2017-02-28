@@ -1,16 +1,20 @@
 import csv
+import sys
 
 #path to csv
-csv_Path = 'eis-listing.csv'
+csv_Path = sys.argv[1]
+
+#Key from the CSV
+key = sys.argv[2]
 
 #Base url
-base_HTML_EPA_url = 'https://cdxnodengn.epa.gov/cdx-enepa-II/public/action/eis/details?eisId='
+baseURL = sys.argv[3]
 
 with open(csv_Path) as csvfile:
     reader = csv.DictReader(csvfile)
-    text_file = open("EIS_URLs.txt", "w")
+    text_file = open("paths.txt", "w")
     for row in reader:
-        epaurl =  base_HTML_EPA_url+row['eis_id']
-        text_file.write(epaurl + '\n')
+        fullURL =  baseURL+row[key]
+        text_file.write(fullURL + '\n')
 
 text_file.close()
