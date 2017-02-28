@@ -11,7 +11,20 @@ Have the following dependecies installed in your machine before getting started 
 
 List of URLs
 ---
-Have a list of URLs in a text file, separated with newline characters.
+Supplied in the repo is a basic URL generator `csv2Urls.py` it just concatenates a base URL with a value from the supplied csv to form a valid URL. The output is a text file newline delimited that can be supplied to the grab-site docker app. See example files `eis-listing.csv` and `paths.txt` for reference.
+
+**Usage**
+
+Script takes in 3 arguments:
+- Path to the csv
+- Key/Column name in the csv
+- Base
+
+```bash
+python csv2Urls.py [path/to/csv] [key name in the csv to concatenate] [base url]
+```
+
+OR can have your own way of generating URLs, the app just needs a text file of URLs newline delimited.
 
 Docker
 ---
@@ -82,29 +95,3 @@ pywb
 [![Travis](https://img.shields.io/travis/rust-lang/rust.svg)](https://travis-ci.org/ikreymer/pywb) [![Coverage Status](https://coveralls.io/repos/github/ikreymer/pywb/badge.svg?branch=master)](https://coveralls.io/github/ikreymer/pywb?branch=master)
 
 This tool can playback WARC files on your localhost, this can be used to verify the generated WARCs, full installation instructions [here](https://github.com/ikreymer/pywb)
-
-# Depreciated
-[![status](https://img.shields.io/badge/status-depreciated-red.svg)]()
-
-Following scripts are legacy scripts that are not being used in the current process of Archiving and generating warcs, but they still work. Currently the `grab-site` method was chose because of the valid WARCs it has been generating.
-
-The `createWarc.py` python script that will parse through a giving csv with EIS ID's and use the wget function grab and package the EIS URL in a WARC format and download any documents associated with the EIS into a zip format.
-
-The `wget` bash function has a option flag to package the response from the supplied URL into a `.warc` format which the Web ARCHive file format the Internet Archive uses to playback web sites.
-
-The python script `createWarc.py` invokes a wget command as a subprocess in the script to package the response from the supplied URL into a warc format. The pdf links present in the html page cannot be preserved in the html therefore, they are being downloaded separately in a different wget call.
-
-The EIS csv is supplied from this [parser](https://github.com/titaniumbones/eot-sprint-toolkit/tree/master/eis)
-This script continues on the work done for the URL scraping list supplied by one of the groups from the Guerrilla Archiving Event taken place at University of Toronto on December 16, 2016.
-
-## Dependecies
-This script has only been tested on OSX and Linux environment. If you would like to contribute to support Windows please contribute.
-
-1. wget function available in your bash shell
-2. python 2.7
-
-## Usage
-Clone this repo then just simply run the python script `python createWarc.py`
-Supplied is the csv, if you would like to customize this python or expand and modify the script to a take in generic datasets please modify the csv, base urls accordingly.
-
-This script is specifically written for the Enivornment Impact Statement documents from the EPA [site](https://cdxnodengn.epa.gov/cdx-enepa-public/action/eis/search)
