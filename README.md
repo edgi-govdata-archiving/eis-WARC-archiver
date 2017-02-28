@@ -11,7 +11,20 @@ Have the following dependecies installed in your machine before getting started 
 
 List of URLs
 ---
-Have a list of URLs in a text file, separated with newline characters.
+Supplied in the repo is a basic URL generator `csv2Urls.py` it just concatenates a base URL with a value from the supplied csv to form a valid URL. The output is a text file newline delimited that can be supplied to the grab-site docker app. See example files `eis-listing.csv` and `paths.txt` for reference.
+
+**Usage**
+
+Script takes in 3 arguments:
+- Path to the csv
+- Key/Column name in the csv
+- Base
+
+```bash
+python csv2Urls.py [path/to/csv] [key name in the csv to concatenate] [base url]
+```
+
+OR can have your own way of generating URLs, the app just needs a text file of URLs newline delimited.
 
 Docker
 ---
@@ -29,21 +42,6 @@ Full install/reference [instructions](https://github.com/slang800/grab-site).
 Get the pre-built docker container:
 ```bash
 docker pull slang800/grab-site
-```
-
-Generating URLs for warcfactory
----
-Supplied in the repo is a basic URL generator `csv2Urls.py` it just concatenates a base URL with a value from the supplied csv to form a valid URL. The output is a text file newline delimited that can be supplied to the grab-site docker app. See example files `eis-listing.csv` and `paths.txt` for reference.
-
-**Usage**
-
-Script takes in 3 arguments:
-- Path to the csv
-- Key/Column name in the csv
-- Base
-
-```bash
-python csv2Urls.py [path/to/csv] [key name in the csv to concatenate] [base url]
 ```
 
 Running
