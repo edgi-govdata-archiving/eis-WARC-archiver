@@ -54,7 +54,7 @@ Can set the port to whatever you want after `-p` flag.
 Set Volume path for data output (ie WARCs) after `-v` flag up to `:/data`
 
 ```bash
-docker run --detach -p [port]:[port] -v [path-to-folder-to-store-data]/grab-site-date:/data --name warcfactory slang800/grab-site
+docker run --detach -p [port]:[port] -v [path-to-folder-to-store-data]/grab-site-data:/data --name warcfactory slang800/grab-site
 ```
 
 Verify the container running using:
